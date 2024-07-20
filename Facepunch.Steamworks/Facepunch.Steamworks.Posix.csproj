@@ -13,10 +13,9 @@
 
 		<PropertyGroup>
 		<Authors>Garry Newman</Authors>
-		<PackageId>Facepunch.Steamworks</PackageId>
-		<PackageDescription>Steamworks implementation with an emphasis on making things easy. For Windows x64.</PackageDescription>
+		<PackageId>Facepunch.Steamworks.posix</PackageId>
+		<PackageDescription>Steamworks implementation with an emphasis on making things easy. For Posix.</PackageDescription>
 		<PackageProjectUrl>https://github.com/Skyrat-Games/Facepunch.Steamworks</PackageProjectUrl>
-		<PackageIcon>Facepunch.Steamworks.jpg</PackageIcon>
 		<PackageTags>facepunch;steam;unity;steamworks;valve</PackageTags>
 		<LangVersion>default</LangVersion>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
