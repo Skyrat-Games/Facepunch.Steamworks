@@ -37,6 +37,15 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
+      - name: Build Win64
+        run: dotnet build ./Facepunch.Steamworks\Facepunch.Steamworks.Win64.csproj --configuration Release
+
+      - name: Build Win32
+        run: dotnet build ./Facepunch.Steamworks\Facepunch.Steamworks.Win32.csproj --configuration Release
+
+      - name: Build Posix
+        run: dotnet build ./Facepunch.Steamworks\Facepunch.Steamworks.Posix.csproj --configuration Release
+
       - name: Pack Win64
         run: dotnet pack ./Facepunch.Steamworks\Facepunch.Steamworks.Win64.csproj --configuration Release --output  ${{ env.NuGetDirectory }}
 
