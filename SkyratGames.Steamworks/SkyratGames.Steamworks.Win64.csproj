@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AssemblyName>SkyratGames.Steamworks.Win64</AssemblyName>
+		<DefineConstants>$(DefineConstants);PLATFORM_WIN64;PLATFORM_WIN;PLATFORM_64</DefineConstants>
+		<TargetFrameworks>net8.0</TargetFrameworks>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>	
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<RootNamespace>Steamworks</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>Garry Newman</Authors>
+		<PackageId>SkyratGames.Steamworks</PackageId>
+		<PackageDescription>Steamworks implementation with an emphasis on making things easy. For Windows x64.</PackageDescription>
+		<PackageProjectUrl>https://github.com/Skyrat-Games/SkyratGames.Steamworks</PackageProjectUrl>
+		<PackageIcon>SkyratGames.Steamworks.jpg</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>steam;unity;steamworks;valve</PackageTags>
+		<LangVersion>default</LangVersion>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/Skyrat-Games/SkyratGames.Steamworks.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+  
+	<ItemGroup>
+		<None Include="SkyratGames.Steamworks.jpg">
+			<Pack>true</Pack>
+			<PackagePath>/</PackagePath>
+		</None>
+		<None Include="../README.md">
+			<Pack>true</Pack>
+			<PackagePath>/</PackagePath>
+		</None>
+		<None Include="../LICENSE">
+			<Pack>true</Pack>
+			<PackagePath>/</PackagePath>
+		</None>
+		<None Include="steam_api64.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<Pack>true</Pack>
+			<PackagePath>content</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<Import Project="SkyratGames.Steamworks.targets" />
+
+	<Target Name="PostBuildHome" AfterTargets="PostBuildEvent" Condition="'$(Computername)'=='GarryBasementPc'">
+	  <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Win64.* C:\plastic\RustMain\Assets\Plugins\SkyratGames.Steamworks\" />
+	  <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Posix.* C:\plastic\RustMain\Assets\Plugins\SkyratGames.Steamworks\" />
+	</Target>
+  
+  <Target Name="PostBuildOffice" AfterTargets="PostBuildEvent" Condition="'$(Computername)'=='GARRYSOFFICEPC'">
+    <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Win64.* C:\Plastic\Rust\Assets\Plugins\SkyratGames.Steamworks\" />
+    <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Posix.* C:\Plastic\Rust\Assets\Plugins\SkyratGames.Steamworks\" />
+    <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Win64.* C:\Git\SkyratGames.Steamworks.UnityTest\Assets\Steamworks" />
+    <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Win32.* C:\Git\SkyratGames.Steamworks.UnityTest\Assets\Steamworks" />
+    <Exec Command="Copy $(TargetDir)\SkyratGames.Steamworks.Posix.* C:\Git\SkyratGames.Steamworks.UnityTest\Assets\Steamworks" />
+  </Target>  
+
+</Project>

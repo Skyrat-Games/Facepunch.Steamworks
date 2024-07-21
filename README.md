@@ -1,8 +1,12 @@
-# Facepunch.Steamworks
+# SkyratGames.Steamworks
 
-[Another fucking c# Steamworks implementation](https://wiki.facepunch.com/steamworks/)
+## This is a fork of [Facepunch.Steamworks](https://github.com/GarryNewman/Facepunch.Steamworks)
 
-![Build All](https://github.com/Crytilis/Facepunch.Steamworks/workflows/Build%20All/badge.svg)
+We forked it because we wanted to update it to the latest version of the Steamworks SDK and add some automation to building it.
+
+[Yet Another fucking c# Steamworks implementation](https://wiki.facepunch.com/steamworks/)
+
+![Release](https://github.com/Crytilis/SkyratGames.Steamworks/workflows/release/badge.svg)
 
 ## Features
 
